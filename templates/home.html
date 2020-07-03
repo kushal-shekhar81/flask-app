@@ -6,6 +6,30 @@
 
 {% block body %}
     <div class="container m-3">
-        <h1> Hello {{ user }}! </h1>
+        <div class="row">
+            <h1> Hello {{ user }}! </h1>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3 mt-3 card">
+                <div class="card-header text-center">
+                    Search for flights
+                </div>
+                <div class="card-body">
+                    <form class="needs-validation" method="POST">
+                        <div class="form-row">
+                            <div class="col-5">
+                                <input type="text" name="from" id="from" class="form-control" placeholder="From" required>
+                            </div>
+                            <div class="col-5">
+                                <input type="text" name="to" id="to" class="form-control" placeholder="To" required>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-primary" type="submit"> Search </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
