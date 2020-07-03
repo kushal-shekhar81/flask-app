@@ -21,8 +21,9 @@ def home():
         return render_template("error.html",message="Not found")
 
     else:
-        name = db.execute("SELECT name FROM login WHERE email_id=:email_id",{"email_id":email})
-        return render_template("home.html",user=name.fetchone())
+        name = db.execute("SELECT name FROM login WHERE email_id=:email_id",{"email_id":email}).fetchone()
+        person = name[0].title()
+        return render_template("home.html",user=person)
 
 @app.route("/signup", methods=["GET","POST"])
 def signup():
